@@ -31,3 +31,15 @@ build/
 
 ### VS Code ###
 .vscode/
+/grpc-common/mvnw
+/grpc-common/mvnw.cmd
+/grpc-server/.mvn/
+/.mvn/
+/grpc-client/.mvn/
+/grpc-client/mvnw
+/grpc-client/mvnw.cmd
+/grpc-common/.mvn/
+/grpc-server/mvnw.cmd
+/grpc-server/mvnw
+/mvnw
+/mvnw.cmd
