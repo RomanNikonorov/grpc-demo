@@ -6,17 +6,21 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.1</version>
+        <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>ru.rnikonorov</groupId>
     <artifactId>grpc-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>grpc-server</name>
     <description>Demo project for Spring Boot and grpc server</description>
+
     <properties>
         <java.version>11</java.version>
+        <grpc-client-spring-boot-starter.version>2.13.1.RELEASE</grpc-client-spring-boot-starter.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -26,7 +30,7 @@
         <dependency>
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
-            <version>2.12.0.RELEASE</version>
+            <version>${grpc-client-spring-boot-starter.version}</version>
         </dependency>
 
         <dependency>

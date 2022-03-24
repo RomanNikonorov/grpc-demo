@@ -1,21 +1,26 @@
 package ru.rnikonorov.grpcclient;
 
-import lombok.extern.log4j.Log4j;
+import com.google.rpc.Code;
+import com.google.rpc.Status;
 import lombok.extern.slf4j.Slf4j;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
+
 import ru.rnikonorov.protos.HelloRequest;
-import ru.rnikonorov.protos.MyServiceGrpc;
+import ru.rnikonorov.protos.MyServiceGrpc.MyServiceBlockingStub;
 
 @Service
 @Slf4j
 public class ClientService {
 
     @GrpcClient("myService")
-    private MyServiceGrpc.MyServiceBlockingStub myServiceBlockingStub;
+    private MyServiceBlockingStub myServiceBlockingStub;
 
 
     public String sayHello(final String name) {
+        final Status status = Status.newBuilder()
+                .setCode(Code.INTERNAL.getNumber())
+                .build();
         final HelloRequest request = HelloRequest.newBuilder()
                 .setName(name)
                 .build();
